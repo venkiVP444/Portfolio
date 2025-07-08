@@ -1,4 +1,4 @@
-# Logs
+# === Logs ===
 logs
 *.log
 npm-debug.log*
@@ -7,19 +7,38 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
+# === Dependency directories ===
+node_modules/
+dist/
+dist-ssr/
 
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
-.DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-#*.sln
-*.sw?
+# === Local environment ===
+*.local
 .env
+
+# === .NET Build Artifacts ===
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# === Rider/VS Code/VS/JetBrains ===
+.vscode/
+!.vscode/extensions.json
+.idea/
+*.sln.iml
+*.csproj.user
+*.njsproj
+*.ntvs*
+*.sw?
+
+# === macOS / Windows ===
+.DS_Store
+Thumbs.db
+
+# === Docker ===
+**/docker-compose*
+**/.dockerignore
+Dockerfile
