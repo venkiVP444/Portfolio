@@ -29,3 +29,4 @@ C:\Projects\Portfolio\obj\Debug\net8.0\refint\Portfolio.dll
 C:\Projects\Portfolio\obj\Debug\net8.0\Portfolio.pdb
 C:\Projects\Portfolio\obj\Debug\net8.0\Portfolio.genruntimeconfig.cache
 C:\Projects\Portfolio\obj\Debug\net8.0\ref\Portfolio.dll
+C:\Projects\Portfolio\obj\Debug\net8.0\Portfolio.sourcelink.json
