@@ -102,6 +102,8 @@ public class HomeController : Controller
         };
     }
 
+
+
     private List<SocialLink> GetSocialLinks()
     {
         return new List<SocialLink>
