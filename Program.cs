@@ -1,9 +1,24 @@
-var builder = WebApplication.CreateBuilder(args);
+﻿var builder = WebApplication.CreateBuilder(args);
+
+// ✅ Get port from Render or fallback to 8080 for local testing
+var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
+
+// ✅ Configure Kestrel to bind to Render's port
+builder.WebHost.ConfigureKestrel(options =>
+{
+    options.ListenAnyIP(int.Parse(port));
+});
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
+// Health check: returns 200 OK immediately
+app.MapGet("/healthz", () => Results.Ok("OK"));
+
+// ... your other endpoints, middleware, etc.
+
+app.Run();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -12,7 +27,9 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+// Note: Optional. Comment this out if HTTPS breaks things on Render.
 app.UseHttpsRedirection();
+
 app.UseStaticFiles();
 
 app.UseRouting();
