@@ -14,11 +14,7 @@ builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 // Health check: returns 200 OK immediately
-app.MapGet("/healthz", () => Results.Ok("OK"));
 
-// ... your other endpoints, middleware, etc.
-
-app.Run();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -39,5 +35,7 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+app.MapGet("/healthz", () => Results.Ok("OK"));
 
 app.Run();
