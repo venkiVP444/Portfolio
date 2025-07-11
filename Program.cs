@@ -24,7 +24,7 @@ if (!app.Environment.IsDevelopment())
 }
 
 // Note: Optional. Comment this out if HTTPS breaks things on Render.
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 
 app.UseStaticFiles();
 
